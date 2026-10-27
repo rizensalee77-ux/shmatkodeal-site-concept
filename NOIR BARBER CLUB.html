@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NOIR BARBER CLUB — Твій стиль. Твої правила.</title>
+<meta name="description" content="NOIR BARBER CLUB — вигаданий преміальний барбершоп. Концепт сайту від SHMATKODEAL.">
+<meta property="og:title" content="NOIR BARBER CLUB — Твій стиль. Твої правила.">
+<meta property="og:description" content="Мистецтво чоловічого догляду. Digital concept by SHMATKODEAL.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap">
+<style>
+:root{--black:#0b0a09;--char:#151311;--ivory:#efe8dc;--muted:#a79f92;--bronze:#b08d57;--line:rgba(239,232,220,.16);
+--serif:"Playfair Display",Georgia,"Times New Roman",serif;--sans:Inter,"Helvetica Neue",Arial,sans-serif;
+--pad:clamp(20px,5vw,72px);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px;background:var(--black)}
+body{margin:0;background:var(--black);color:var(--ivory);font:400 1rem/1.6 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+.wrap{padding-inline:var(--pad);max-width:1480px;margin-inline:auto}
+.label{font-size:.72rem;letter-spacing:.28em;color:var(--bronze);text-transform:uppercase;margin:0 0 1.4rem}
+h1,h2,h3{font-family:var(--serif);font-weight:900;margin:0;text-transform:uppercase;line-height:.98}
+h2{font-size:clamp(2rem,5.2vw,4.6rem)}
+section{padding-block:clamp(80px,12vw,160px)}
+.btn{display:inline-flex;align-items:center;gap:.6em;min-height:48px;padding:.9em 1.8em;border:1px solid var(--ivory);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;transition:background .3s,color .3s,border-color .3s}
+.btn:hover{background:var(--ivory);color:var(--black)}
+.btn.solid{background:var(--bronze);border-color:var(--bronze);color:var(--black)}
+.btn.solid:hover{background:var(--ivory);border-color:var(--ivory)}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:20;padding:calc(env(safe-area-inset-top,0px) + 16px) var(--pad) 16px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(rgba(11,10,9,.85),rgba(11,10,9,0))}
+.logo{font-family:var(--serif);font-weight:900;letter-spacing:.32em;font-size:1.1rem}
+nav{display:flex;align-items:center;gap:clamp(18px,3vw,44px)}
+nav a:not(.btn){font-size:.72rem;letter-spacing:.24em;position:relative;padding:8px 0}
+nav a:not(.btn)::after{content:"";position:absolute;left:0;bottom:2px;height:1px;width:100%;background:var(--bronze);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+nav a:not(.btn):hover::after{transform:scaleX(1)}
+.burger{display:none;background:none;border:0;color:var(--ivory);width:48px;height:48px;cursor:pointer;position:relative}
+.burger i{position:absolute;left:12px;right:12px;height:1px;background:currentColor;transition:transform .3s,top .3s}
+.burger i:first-child{top:19px}.burger i:last-child{top:28px}
+.menu-open .burger i:first-child{top:24px;transform:rotate(45deg)}.menu-open .burger i:last-child{top:24px;transform:rotate(-45deg)}
+@media(max-width:820px){.burger{display:block}
+nav{position:fixed;inset:0;background:var(--black);flex-direction:column;justify-content:center;gap:28px;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.menu-open nav{opacity:1;visibility:visible}
+nav a:not(.btn){font-family:var(--serif);font-size:1.9rem;letter-spacing:.08em}
+.burger,.logo{position:relative;z-index:30}}
+/* plates (art-directed placeholders for photography) */
+.plate{position:relative;overflow:hidden;background:radial-gradient(120% 90% at var(--lx,30%) 15%,#40352a 0%,#1b1612 48%,#0b0a09 100%)}
+.plate::after{content:"";position:absolute;inset:0;opacity:.22;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.plate svg.ic{position:absolute;width:var(--s,55%);max-height:78%;left:var(--x,50%);top:var(--y,50%);transform:translate(-50%,-50%) rotate(var(--r,0deg));fill:none;stroke:var(--bronze);stroke-width:.7;opacity:.5}
+.plate figcaption{position:absolute;left:14px;bottom:12px;z-index:2;font-size:.62rem;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+/* hero */
+.hero{min-height:100svh;padding:0;display:flex;align-items:flex-end;position:relative}
+.hero .plate{position:absolute;inset:0;--lx:70%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,10,9,.85),rgba(11,10,9,.2) 70%),linear-gradient(0deg,var(--black),transparent 40%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:140px 56px}
+.hero h1{font-size:clamp(3.1rem,11.5vw,10.5rem);letter-spacing:-.01em}
+.hero h1 em{display:block;color:var(--bronze);font-weight:700}
+.hero p.sub{max-width:30rem;color:var(--ivory);font-size:1.1rem;margin:2rem 0}
+.hero .micro{font-size:.68rem;letter-spacing:.26em;color:var(--muted);margin-top:1.6rem}
+.hero .tag{position:absolute;right:var(--pad);bottom:56px;z-index:2;writing-mode:vertical-rl;font-size:.64rem;letter-spacing:.3em;color:var(--muted)}
+.scroll{display:inline-block;width:1px;height:56px;background:linear-gradient(var(--bronze),transparent);margin-left:2rem;vertical-align:middle;animation:sc 2.4s ease-in-out infinite}
+@keyframes sc{50%{transform:scaleY(.4);transform-origin:top}}
+@media(max-width:820px){.hero .tag{display:none}}
+/* philosophy */
+.phil{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,7vw,120px);align-items:end}
+.phil .plate{aspect-ratio:4/5}
+.phil p.body{max-width:30rem;color:var(--muted);font-size:1.1rem;margin-top:2rem}
+@media(max-width:820px){.phil{grid-template-columns:1fr}.phil .plate{order:2;aspect-ratio:1/1}}
+/* services */
+.svc{background:var(--char)}
+.rows{margin-top:clamp(40px,6vw,80px);border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:4rem 1.1fr 1.4fr 11rem 2rem;gap:20px;align-items:center;padding:34px 0;border-bottom:1px solid var(--line);transition:padding .4s,background .4s}
+.row:hover{padding-inline:18px;background:rgba(176,141,87,.07)}
+.row .n{color:var(--bronze);font-size:.8rem;letter-spacing:.2em}
+.row h3{font-size:clamp(1.3rem,2.4vw,2rem)}
+.row p{margin:0;color:var(--muted)}
+.row .price{font-size:.74rem;letter-spacing:.16em;color:var(--ivory);text-align:right}
+.row .price small{display:block;color:var(--muted);letter-spacing:.2em;font-size:.6rem}
+.row .ar{color:var(--bronze);transition:transform .35s}
+.row:hover .ar{transform:translate(4px,-4px)}
+@media(max-width:820px){.row{grid-template-columns:2.4rem 1fr 1.5rem;row-gap:8px}.row p{grid-column:2/3}.row .price{grid-column:2/3;text-align:left}.row .ar{grid-row:1;grid-column:3}}
+/* signature */
+.sig{padding:0;min-height:85svh;display:flex;align-items:center;position:relative}
+.sig .plate{position:absolute;inset:0;--lx:25%}
+.sig .wrap{position:relative;z-index:2}
+.sig h2{font-size:clamp(2.4rem,8vw,7.5rem);max-width:12ch}
+.sig h2 em{display:block;color:var(--bronze);font-weight:700}
+/* gallery */
+.g{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(130px,21vw,290px);gap:12px;margin-top:clamp(40px,6vw,80px)}
+.g .plate{margin:0}
+.g1{grid-column:span 4;grid-row:span 2}.g2,.g3{grid-column:span 2}.g4{grid-column:span 2;grid-row:span 2}.g5{grid-column:span 4;grid-row:span 2}
+@media(max-width:640px){.g{grid-template-columns:repeat(2,1fr);grid-auto-rows:44vw}.g1,.g5{grid-column:span 2;grid-row:span 1}.g2,.g3{grid-column:span 1}.g4{grid-column:span 1;grid-row:span 2}.g5{grid-column:span 1;grid-row:span 2}}
+/* approach */
+.pts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(40px,6vw,80px);border-top:1px solid var(--line)}
+.pt{padding:36px 32px 0 0}.pt+.pt{padding-left:32px;border-left:1px solid var(--line)}
+.pt .n{color:var(--bronze);font-size:.8rem;letter-spacing:.2em}
+.pt h3{font-size:clamp(1.3rem,2.2vw,1.9rem);margin:1rem 0 .8rem}
+.pt p{margin:0;color:var(--muted);font-family:var(--serif);font-style:italic;font-size:1.15rem}
+@media(max-width:820px){.pts{grid-template-columns:1fr}.pt,.pt+.pt{padding:28px 0;border-left:0;border-bottom:1px solid var(--line)}}
+/* booking */
+.book{background:var(--ivory);color:var(--black);text-align:left}
+.book .label{color:#7a5f33}
+.book h2{font-size:clamp(2.4rem,8vw,7rem);max-width:14ch}
+.book p{max-width:28rem;font-size:1.15rem;margin:1.8rem 0 2.4rem}
+.book .btn{border-color:var(--black);color:var(--ivory);background:var(--black)}
+.book .btn:hover{background:var(--bronze);border-color:var(--bronze);color:var(--black)}
+.book small{display:block;margin-top:1.4rem;font-size:.72rem;letter-spacing:.1em;color:#5b5348}
+/* contacts */
+.cts{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:clamp(40px,6vw,80px);border-top:1px solid var(--line);padding-top:36px}
+.cts h3{font-family:var(--sans);font-size:.7rem;letter-spacing:.26em;color:var(--bronze);font-weight:500;margin-bottom:.8rem}
+.cts p,.cts a{margin:0;color:var(--ivory);overflow-wrap:anywhere}
+.cts a:hover{color:var(--bronze)}
+@media(max-width:820px){.cts{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.cts{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:36px var(--pad) calc(36px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center;font-size:.68rem;letter-spacing:.2em;color:var(--muted)}
+footer a{color:var(--ivory);border-bottom:1px solid var(--bronze)}
+footer .fict{flex-basis:100%;letter-spacing:.08em;text-transform:none;font-size:.74rem}
+/* motion */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="scissors" viewBox="0 0 100 100"><circle cx="28" cy="80" r="11"/><circle cx="72" cy="80" r="11"/><path d="M34 71 70 8M66 71 30 8"/></symbol>
+<symbol id="razor" viewBox="0 0 100 100"><rect x="6" y="52" width="58" height="16" rx="8"/><path d="M60 60 92 26l5 6-29 36z"/></symbol>
+<symbol id="comb" viewBox="0 0 100 100"><rect x="8" y="30" width="84" height="22" rx="3"/><path d="M16 52v22M26 52v22M36 52v22M46 52v22M56 52v22M66 52v22M76 52v22M86 52v22"/></symbol>
+<symbol id="mirror" viewBox="0 0 100 100"><ellipse cx="50" cy="40" rx="26" ry="34"/><ellipse cx="50" cy="40" rx="21" ry="29"/><path d="M50 74v22M36 96h28"/></symbol>
+<symbol id="chair" viewBox="0 0 100 100"><rect x="30" y="8" width="40" height="36" rx="7"/><rect x="22" y="48" width="56" height="14" rx="5"/><path d="M50 62v24M28 92h44M20 50v16"/></symbol>
+</svg>
+
+<header>
+  <a href="#top" class="logo" aria-label="NOIR BARBER CLUB — на початок">NOIR</a>
+  <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="nav"><i></i><i></i></button>
+  <nav id="nav" aria-label="Головна навігація">
+    <a href="#services">ПОСЛУГИ</a><a href="#about">ПРО НАС</a><a href="#gallery">ГАЛЕРЕЯ</a><a href="#contacts">КОНТАКТИ</a>
+    <a href="#booking" class="btn">ЗАПИСАТИСЯ</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+  <figure class="plate" role="img" aria-label="Темний інтер’єр барбершопу: ножиці в м’якому світлі" style="margin:0">
+    <svg class="ic" style="--s:46%;--x:74%;--y:46%;--r:18deg"><use href="#scissors"/></svg>
+    <figcaption>Фото-слот · hero</figcaption>
+  </figure>
+  <div class="wrap">
+    <p class="label">Concept / Barber Culture</p>
+    <h1 id="h1">Твій стиль.<em>Твої правила.</em></h1>
+    <p class="sub">Мистецтво чоловічого догляду. Точність у кожній деталі.</p>
+    <a href="#services" class="btn solid">Обрати послугу ↗</a><span class="scroll" aria-hidden="true"></span>
+    <p class="micro">ІНДИВІДУАЛЬНИЙ ПІДХІД • БЕЗ КОМПРОМІСІВ</p>
+  </div>
+  <span class="tag">ВИГАДАНИЙ КОНЦЕПТ · FICTIONAL</span>
+</section>
+
+<section id="about" aria-labelledby="h-phil">
+  <div class="wrap phil">
+    <figure class="plate rv" role="img" aria-label="Професійні інструменти для догляду на темному фоні" style="margin:0;--lx:60%">
+      <svg class="ic" style="--s:60%;--r:-24deg"><use href="#razor"/></svg><figcaption>Фото-слот · інструменти</figcaption>
+    </figure>
+    <div class="rv">
+      <p class="label">01 / Філософія</p>
+      <h2 id="h-phil">Стиль починається з деталей.</h2>
+      <p class="body">Ми віримо, що якісна стрижка — це більше, ніж зовнішній вигляд. Це увага до деталей, відчуття впевненості та час, присвячений собі.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="svc" aria-labelledby="h-svc">
+  <div class="wrap">
+    <p class="label rv">02 / Послуги</p>
+    <h2 id="h-svc" class="rv">Твоя форма.<br>Твоя історія.</h2>
+    <div class="rows">
+      <a href="#booking" class="row rv"><span class="n">01</span><h3>Чоловіча стрижка</h3><p>Чітка форма, індивідуальний підхід і увага до кожної деталі.</p><span class="price">від 000 ₴<small>ДЕМО-ЗНАЧЕННЯ</small></span><span class="ar" aria-hidden="true">↗</span></a>
+      <a href="#booking" class="row rv"><span class="n">02</span><h3>Стрижка + борода</h3><p>Гармонійний образ, у якому кожен елемент доповнює інший.</p><span class="price">від 000 ₴<small>ДЕМО-ЗНАЧЕННЯ</small></span><span class="ar" aria-hidden="true">↗</span></a>
+      <a href="#booking" class="row rv"><span class="n">03</span><h3>Оформлення бороди</h3><p>Акуратні контури та доглянутий вигляд.</p><span class="price">від 000 ₴<small>ДЕМО-ЗНАЧЕННЯ</small></span><span class="ar" aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sig" aria-label="Маніфест">
+  <figure class="plate" role="img" aria-label="Крупний план: ножиці й гребінець у холодному світлі" style="margin:0">
+    <svg class="ic" style="--s:38%;--x:80%;--y:52%;--r:-12deg"><use href="#comb"/></svg><figcaption>Фото-слот · крупний план</figcaption>
+  </figure>
+  <div class="wrap"><h2 class="rv">Не просто стрижка.<em>Твоя індивідуальність.</em></h2></div>
+</section>
+
+<section id="gallery" aria-labelledby="h-gal">
+  <div class="wrap">
+    <p class="label rv">03 / Галерея</p>
+    <h2 id="h-gal" class="rv">Атмосфера, яку відчуваєш.</h2>
+    <div class="g">
+      <figure class="plate g1 rv" role="img" aria-label="Інтер’єр барбершопу з кріслом і дзеркалом" style="--lx:40%"><svg class="ic" style="--s:30%;--r:0deg"><use href="#chair"/></svg><figcaption>Інтер’єр</figcaption></figure>
+      <figure class="plate g2 rv" role="img" aria-label="Барбер за роботою" style="--lx:70%"><svg class="ic" style="--s:60%"><use href="#scissors"/></svg><figcaption>Майстер за роботою</figcaption></figure>
+      <figure class="plate g3 rv" role="img" aria-label="Професійні інструменти" style="--lx:20%"><svg class="ic" style="--s:62%;--r:-20deg"><use href="#razor"/></svg><figcaption>Інструменти</figcaption></figure>
+      <figure class="plate g4 rv" role="img" aria-label="Портрет зі стильною стрижкою" style="--lx:50%"><svg class="ic" style="--s:70%"><use href="#mirror"/></svg><figcaption>Портрет</figcaption></figure>
+      <figure class="plate g5 rv" role="img" aria-label="Деталь крісла та матеріалів інтер’єру" style="--lx:80%"><svg class="ic" style="--s:36%;--r:90deg"><use href="#comb"/></svg><figcaption>Деталь</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="svc" aria-labelledby="h-app">
+  <div class="wrap">
+    <p class="label rv">04 / Наш підхід</p>
+    <h2 id="h-app" class="rv">Менше зайвого.<br>Більше суті.</h2>
+    <div class="pts">
+      <div class="pt rv"><span class="n">01</span><h3>Увага до деталей</h3><p>Кожна лінія має значення.</p></div>
+      <div class="pt rv"><span class="n">02</span><h3>Індивідуальний підхід</h3><p>Образ, що відповідає саме тобі.</p></div>
+      <div class="pt rv"><span class="n">03</span><h3>Комфорт без зайвого</h3><p>Простір, у якому можна зосередитися на собі.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="book" aria-labelledby="h-book">
+  <div class="wrap">
+    <p class="label">Запис</p>
+    <h2 id="h-book" class="rv">Час оновити свій стиль.</h2>
+    <p class="rv">Обери послугу та зв’яжися з нами, щоб узгодити зручний час.</p>
+    <a id="bookBtn" class="btn rv" href="mailto:hello@example.com?subject=Запис%20до%20NOIR%20BARBER%20CLUB">Записатися ↗</a>
+    <small>Демо: це редагований заповнювач. Підключіть реальний канал запису в об’єкті CONFIG у кінці файлу.</small>
+  </div>
+</section>
+
+<section id="contacts" aria-labelledby="h-con">
+  <div class="wrap">
+    <p class="label rv">05 / Контакти</p>
+    <h2 id="h-con" class="rv">Знайди нас.</h2>
+    <div class="cts rv">
+      <div><h3>АДРЕСА</h3><p>[Вулиця, будинок — вказати]</p></div>
+      <div><h3>ГОДИНИ РОБОТИ</h3><p>[Пн–Нд, 00:00–00:00 — вказати]</p></div>
+      <div><h3>ТЕЛЕФОН / МЕСЕНДЖЕР</h3><a id="phoneLink" href="#contacts">[+380 XX XXX XX XX]</a></div>
+      <div><h3>INSTAGRAM</h3><a id="igLink" href="#contacts">@your_handle</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span class="logo">NOIR</span>
+  <span>DIGITAL CONCEPT BY <a href="https://shmatkodeal.netlify.app/" target="_blank" rel="noopener">SHMATKODEAL</a></span>
+  <span class="fict">NOIR BARBER CLUB — вигаданий проєкт для портфоліо. Усі контакти, ціни та зображення — демонстраційні.</span>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+// Replace placeholders with real values when available.
+const CONFIG={booking:'',phone:'',instagram:''};
+if(CONFIG.booking)document.getElementById('bookBtn').href=CONFIG.booking;
+if(CONFIG.phone){const p=document.getElementById('phoneLink');p.href='tel:'+CONFIG.phone;p.textContent=CONFIG.phone}
+if(CONFIG.instagram)document.getElementById('igLink').href=CONFIG.instagram;
+const b=document.querySelector('.burger');
+function menu(o){document.body.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o)}
+b.addEventListener('click',()=>menu(!document.body.classList.contains('menu-open')));
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>menu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape')menu(false)});
+const els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});els.forEach(e=>io.observe(e))}
+else els.forEach(e=>e.classList.add('in'));
+</script>
+</body>
+</html>
